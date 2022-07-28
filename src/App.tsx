@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { Box, Button, Typography } from "@mui/material";
-import { friends, family } from "./constants/seating";
+import { friends, family, main } from "./constants/seating";
 import BasicSelect from "./components/Select";
 import { IPerson } from "./interfaces/person";
 
@@ -16,7 +16,7 @@ function App() {
     color: theme.palette.text.secondary,
   }));
 
-  const names = [...friends, ...family];
+  const names = [...friends, ...family, ...main];
 
   const [selectedPerson, setSelectedPerson] = React.useState({
     name: "",
@@ -25,6 +25,12 @@ function App() {
   });
 
   const cellStyle = (item: IPerson) => {
+    if (["S-3", "S-4"].includes(item.seat)) {
+      return {
+        backgroundColor: "gold",
+        color: "black",
+      };
+    }
     if (item.name === selectedPerson.name) {
       return {
         backgroundColor: "#f50057",
@@ -42,6 +48,11 @@ function App() {
   };
 
   const chooseText = (item: IPerson) => {
+    if (item.seat === "S-3")
+      return "Emilia";
+    if (item.seat === "S-4")
+      return "Patryk";
+
     if (item.name === selectedPerson.name) {
       return item.name.split(" ")[0];
     } else if (item.seat === selectedPerson.plusOne) {
@@ -79,7 +90,14 @@ function App() {
 
     if (person.lang === "ENG") {
       return (
-        <div style={{ height: "320px", textAlign: "center", border: "1px solid black", marginBottom: "20px" }}>
+        <div
+          style={{
+            height: "320px",
+            textAlign: "center",
+            border: "1px solid black",
+            marginBottom: "20px",
+          }}
+        >
           <h3>Hey, Thanks for coming!</h3>
           <p>
             {`You are sitting at table #${person.seat} at seat #${person.seat}`}
@@ -92,7 +110,14 @@ function App() {
       );
     } else if (person.lang === "CZ") {
       return (
-        <div style={{ height: "320px", textAlign: "center", border: "1px solid black", marginBottom: "20px" }}>
+        <div
+          style={{
+            height: "320px",
+            textAlign: "center",
+            border: "1px solid black",
+            marginBottom: "20px",
+          }}
+        >
           <h3>Ahoj, děkujeme za přijetí!</h3>
           <p>{`Sedíte na stolu #${person.seat} na sedadle #${person.seat}`}</p>
           {plusOne && <p>{`${plusOne.name} sedí ${plusOneDirection}`}</p>}
@@ -100,7 +125,15 @@ function App() {
       );
     } else {
       return (
-        <div style={{ height: "320px", textAlign: "center", paddingTop: "20px", border: "1px solid black", marginBottom: "20px" }}>
+        <div
+          style={{
+            height: "320px",
+            textAlign: "center",
+            paddingTop: "20px",
+            border: "1px solid black",
+            marginBottom: "20px",
+          }}
+        >
           <h3>Hej, dziękujemy za przybycie!</h3>
           <p>{`Siedzisz przy stole #${person.seat} na miejscu #${person.seat}`}</p>
           {plusOne && <p>{`${plusOne.name} siedzi ${plusOneDirection}`}</p>}
@@ -174,7 +207,12 @@ function App() {
         ) : (
           <Button
             variant="contained"
-            style={{ backgroundColor: "gold", color: "black", marginLeft: "10px", marginBottom: "5px"}}
+            style={{
+              backgroundColor: "gold",
+              color: "black",
+              marginLeft: "10px",
+              marginBottom: "5px",
+            }}
             onClick={() =>
               setSelectedPerson({ name: "", seat: "", plusOne: null })
             }
@@ -240,6 +278,36 @@ function App() {
           </Box>
         </div>
       )}
+
+      <div style={{ width: "100%" }}>
+        {selectedPerson.name !== "" && (
+          <Box sx={{ width: "100%", display: "flex", marginTop: "30px", justifyContent: "center", marginBottom: "30px" }}>
+            <div
+              style={{
+                display: "flex-column",
+                width: "95%",
+                marginTop: "auto",
+                justifyContent: "center",
+              }}
+            >
+              <Grid
+                container
+                rowSpacing={0}
+                columnSpacing={{ xs: 24, sm: 0, md: 1, marginLeft: "10%", width: "100%" }}
+              >
+                {main.map((item, index) => (
+                  <Grid item key={index} xs={2}>
+                    <Item style={{ ...cellStyle(item) }}>
+                      {chooseText(item)}
+                    </Item>
+                  </Grid>
+                ))}
+              </Grid>
+            </div>
+          </Box>
+        )}
+        ;
+      </div>
     </div>
   );
 }

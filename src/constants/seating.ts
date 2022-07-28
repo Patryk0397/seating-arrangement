@@ -331,3 +331,37 @@ export const family: IPerson[] = [
     plusOne: "B-3",
   },
 ];
+
+export const main = [
+  {
+    name: 'Krzysztof Mikolajczyk',
+    seat: "S-1",
+    plusOne: "S-2",
+  },
+  {
+    name: 'Nadia Marat',
+    seat: "S-2",
+    plusOne: "S-1",
+  },
+  {
+    name: 'Emilia Orsztynowicz',
+    seat: "S-3",
+    plusOne: "S-4",
+  },
+  {
+    name: 'Patryk Orsztynowicz',
+    seat: "S-4",
+    plusOne: "S-3",
+  },
+  {
+    name: 'Mir Gabare',
+    seat: "S-5",
+    plusOne: null,
+    lang: 'ENG',
+  },
+  {
+    name: 'Natalia Kurzydlak',
+    seat: "S-6",
+    plusOne: null,
+  }
+];
