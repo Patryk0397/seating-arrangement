@@ -4,7 +4,6 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { IPerson } from '../interfaces/person';
 
 export default function BasicSelect({ items, value, onChange }: any) {
   const handleChange = (event: SelectChangeEvent) => {
