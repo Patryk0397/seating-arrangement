@@ -6,6 +6,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { friends, family, main } from "./constants/seating";
 import BasicSelect from "./components/Select";
 import { IPerson } from "./interfaces/person";
+import { tables } from "./constants/tables";
 
 function App() {
   const Item = styled(Paper)(({ theme }) => ({
@@ -25,22 +26,26 @@ function App() {
   });
 
   const cellStyle = (item: IPerson) => {
-    if (["S-3", "S-4"].includes(item.seat)) {
+    if (item.seat === "S-3") {
       return {
-        backgroundColor: "gold",
-        color: "black",
+        backgroundColor: "#003303",
+        color: "#fff",
+        width: "100%",
+        fontSize: "11px"
       };
     }
     if (item.name === selectedPerson.name) {
       return {
-        backgroundColor: "#f50057",
+        backgroundColor: "#025e07",
         color: "#fff",
+        fontSize: "small"
       };
     }
     if (item.seat === selectedPerson.plusOne) {
       return {
-        backgroundColor: "#f50057",
-        color: "yellow",
+        backgroundColor: "#05800b",
+        color: "#fff",
+        fontSize: "small"
       };
     }
 
@@ -48,10 +53,7 @@ function App() {
   };
 
   const chooseText = (item: IPerson) => {
-    if (item.seat === "S-3")
-      return "Emilia";
-    if (item.seat === "S-4")
-      return "Patryk";
+    if (item.seat === "S-3") return "Emilia & Patryk";
 
     if (item.name === selectedPerson.name) {
       return item.name.split(" ")[0];
@@ -94,7 +96,7 @@ function App() {
           style={{
             height: "320px",
             textAlign: "center",
-            border: "1px solid black",
+            border: "1px solid #c4c4c4",
             marginBottom: "20px",
           }}
         >
@@ -114,7 +116,7 @@ function App() {
           style={{
             height: "320px",
             textAlign: "center",
-            border: "1px solid black",
+            border: "1px solid #c4c4c4",
             marginBottom: "20px",
           }}
         >
@@ -130,12 +132,14 @@ function App() {
             height: "320px",
             textAlign: "center",
             paddingTop: "20px",
-            border: "1px solid black",
+            border: "1px solid #c4c4c4",
             marginBottom: "20px",
           }}
         >
           <h3>Hej, dziękujemy za przybycie!</h3>
-          <p>{`Siedzisz przy stole #${person.seat} na miejscu #${person.seat}`}</p>
+          <p>{`Siedzisz przy stole #${getTableNumber(
+            selectedPerson
+          )} na miejscu #${person.seat.split("-")[1]}`}</p>
           {plusOne && <p>{`${plusOne.name} siedzi ${plusOneDirection}`}</p>}
         </div>
       );
@@ -150,6 +154,17 @@ function App() {
     } else {
       return "Wróć";
     }
+  };
+
+  const getTableNumber = (person: IPerson) => {
+    let tableNumber = 0;
+    Object.keys(tables).forEach((key) => {
+      if (tables[key].includes(person.seat)) {
+        tableNumber = Number(key);
+      }
+    });
+
+    return tableNumber;
   };
 
   return (
@@ -208,10 +223,11 @@ function App() {
           <Button
             variant="contained"
             style={{
-              backgroundColor: "gold",
+              backgroundColor: "white",
               color: "black",
               marginLeft: "10px",
               marginBottom: "5px",
+              width: "95%"
             }}
             onClick={() =>
               setSelectedPerson({ name: "", seat: "", plusOne: null })
@@ -243,7 +259,14 @@ function App() {
               <Grid
                 container
                 rowSpacing={1}
-                columnSpacing={{ xs: 1, sm: 2, md: 3, marginLeft: "10%" }}
+                columnSpacing={{
+                  xs: 1,
+                  sm: 2,
+                  md: 3,
+                  marginLeft: "10%",
+                  minWidth: "100%",
+                  justifyContent: "space-between",
+                }}
               >
                 {friends.map((item, index) => (
                   <Grid item key={index} xs={6}>
@@ -279,35 +302,39 @@ function App() {
         </div>
       )}
 
-      <div style={{ width: "100%" }}>
-        {selectedPerson.name !== "" && (
-          <Box sx={{ width: "100%", display: "flex", marginTop: "30px", justifyContent: "center", marginBottom: "30px" }}>
+      {selectedPerson.name !== "" && (
+          <Box sx={{ width: "100%", display: "flex" }}>
             <div
               style={{
                 display: "flex-column",
-                width: "95%",
-                marginTop: "auto",
+                width: "100%",
+                margin: "15px",
+                marginRight: "5px",
                 justifyContent: "center",
               }}
             >
               <Grid
                 container
                 rowSpacing={0}
-                columnSpacing={{ xs: 24, sm: 0, md: 1, marginLeft: "10%", width: "100%" }}
+                columnSpacing={{ xs: 3, sm: 0, md: 0 }}
+                sx={{
+                  justifyContent: "between",
+                  width: "100%",
+                  "@media (min-width: 0px)": {
+                    width: "100%",
+                  },
+                }}
               >
                 {main.map((item, index) => (
-                  <Grid item key={index} xs={2}>
-                    <Item style={{ ...cellStyle(item) }}>
+                  <Grid item key={index} xs={2.4}>
+                    <Item style={{ ...cellStyle(item), width: "100%" }}>
                       {chooseText(item)}
                     </Item>
                   </Grid>
                 ))}
               </Grid>
             </div>
-          </Box>
-        )}
-        ;
-      </div>
+          </Box>      )}
     </div>
   );
 }

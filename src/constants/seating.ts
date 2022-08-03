@@ -37,7 +37,7 @@ export const friends: IPerson[] = [
     plusOne: "A-20",
   },
   {
-    name: 'Ania+1',
+    name: 'Michal Galazka',
     seat: "A-17",
     plusOne: "A-19",
   },
@@ -344,24 +344,19 @@ export const main = [
     plusOne: "S-1",
   },
   {
-    name: 'Emilia Orsztynowicz',
+    name: 'Emilia & Patryk',
     seat: "S-3",
-    plusOne: "S-4",
-  },
-  {
-    name: 'Patryk Orsztynowicz',
-    seat: "S-4",
-    plusOne: "S-3",
+    plusOne: null,
   },
   {
     name: 'Mir Gabare',
-    seat: "S-5",
+    seat: "S-4",
     plusOne: null,
     lang: 'ENG',
   },
   {
     name: 'Natalia Kurzydlak',
-    seat: "S-6",
+    seat: "S-5",
     plusOne: null,
   }
 ];
