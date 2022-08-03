@@ -102,7 +102,7 @@ function App() {
         >
           <h3>Hey, Thanks for coming!</h3>
           <p>
-            {`You are sitting at table #${getTableNumber(selectedPerson)} at seat #${person.seat}`}
+            {`You are sitting at table #${getTableNumber(selectedPerson)} at seat #${person.seat.split("-")[1]}`}
             .
           </p>
           {plusOne && (
@@ -121,7 +121,7 @@ function App() {
           }}
         >
           <h3>Ahoj, děkujeme za přijetí!</h3>
-          <p>{`Sedíte na stolu #${getTableNumber(selectedPerson)} na sedadle #${person.seat}`}</p>
+          <p>{`Sedíte na stolu #${getTableNumber(selectedPerson)} na sedadle #${person.seat.split("-")[1]}`}</p>
           {plusOne && <p>{`${plusOne.name} sedí ${plusOneDirection}`}</p>}
         </div>
       );
