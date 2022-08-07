@@ -15,7 +15,7 @@ export default function BasicSelect({ items, value, onChange }: any) {
   return (
     <Box sx={{ minWidth: "80%" }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Imie/Name</InputLabel>
+        <InputLabel sx={{ background: "white" }} id="demo-simple-select-label">Imie/Name/Nazev</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
