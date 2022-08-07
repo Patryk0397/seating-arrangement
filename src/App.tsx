@@ -76,7 +76,7 @@ function App() {
     <div
       style={{
         width: "100%",
-        paddingTop: "45%",
+        paddingTop: "40%",
       }}
     >
       <Header selectedPerson={selectedPerson}></Header>
@@ -170,7 +170,7 @@ function App() {
         )}
       </div>
       {!selectedPerson.name && (
-        <div style={{ display: "flex", justifyContent: "center", paddingTop: "20px" }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <img
             style={{
               width: "90%",
