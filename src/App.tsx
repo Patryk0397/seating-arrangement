@@ -6,6 +6,7 @@ import { IPerson } from "./interfaces/person";
 import SeatingDiagram from "./components/SeatingDiagram";
 import { Header } from "./components/Header";
 import { TimelineComponent } from "./components/Timeline";
+import { DrinksMenu } from "./components/DrinksMenu";
 
 function App() {
   const names = [...friends, ...family, ...main];
@@ -14,9 +15,11 @@ function App() {
     name: "",
     seat: "",
     plusOne: null,
+    lang: "PL"
   });
 
   const [mode, setMode] = React.useState("seating");
+  const [ menuOpen, setMenuOpen ] = React.useState(false);
 
   const generateBackMessage = (person: IPerson) => {
     if (person.lang === "ENG") {
@@ -45,6 +48,16 @@ function App() {
       } else {
         return "Rozsiedzenie";
       }
+    }
+  };
+
+  const generateMenuMessage = (person: IPerson) => {
+    if (person.lang === "ENG") {
+      return "Cocktail Menu";
+    } else if (person.lang === "CZ") {
+      return "Koktejl Menu";
+    } else {
+      return "Menu koktajli";
     }
   };
 
@@ -82,7 +95,7 @@ function App() {
                 marginBottom: "5px",
               }}
               onClick={() =>
-                setSelectedPerson({ name: "", seat: "", plusOne: null })
+                setSelectedPerson({ name: "", seat: "", plusOne: null, lang: "PL" })
               }
             >
               {generateBackMessage(selectedPerson)}
@@ -101,6 +114,20 @@ function App() {
             >
               {generateModeMessage(selectedPerson)}
             </Button>
+            <Button
+              variant="contained"
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                marginLeft: "10px",
+                marginBottom: "5px",
+              }}
+              onClick={() =>
+                setMenuOpen(true)
+              }
+            >
+              {generateMenuMessage(selectedPerson)}
+            </Button>
           </div>
         )}
       </div>
@@ -111,6 +138,11 @@ function App() {
       {selectedPerson.name && mode === "timeline" && (
       <TimelineComponent selectedPerson={selectedPerson}></TimelineComponent>
       )}
+      <DrinksMenu
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        person={selectedPerson}
+      ></DrinksMenu>
     </div>
   );
 }
