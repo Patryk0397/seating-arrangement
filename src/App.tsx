@@ -94,9 +94,10 @@ function App() {
                 marginLeft: "10px",
                 marginBottom: "5px",
               }}
-              onClick={() =>
+              onClick={() => {
                 setSelectedPerson({ name: "", seat: "", plusOne: null, lang: "PL" })
-              }
+                setMode("seating");
+              }}
             >
               {generateBackMessage(selectedPerson)}
             </Button>
