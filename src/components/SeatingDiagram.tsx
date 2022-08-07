@@ -97,7 +97,6 @@ export default function SeatingDiagram({ selectedPerson }: any) {
           style={{
             height: "320px",
             textAlign: "center",
-            border: "1px solid #c4c4c4",
             marginBottom: "20px",
           }}
         >
@@ -119,7 +118,6 @@ export default function SeatingDiagram({ selectedPerson }: any) {
           style={{
             height: "320px",
             textAlign: "center",
-            border: "1px solid #c4c4c4",
             marginBottom: "20px",
           }}
         >
@@ -137,7 +135,6 @@ export default function SeatingDiagram({ selectedPerson }: any) {
             height: "320px",
             textAlign: "center",
             paddingTop: "20px",
-            border: "1px solid #c4c4c4",
             marginBottom: "20px",
           }}
         >
