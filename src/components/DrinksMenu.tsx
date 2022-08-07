@@ -7,7 +7,7 @@ import {
   DialogTitle,
   Typography,
 } from "@mui/material";
-import { czeCocktails, engCocktails, polCocktails } from "../constants/drinks";
+import { czeCocktails, czeShots, engCocktails, engShots, polCocktails, polShots } from "../constants/drinks";
 import { IDrink } from "../interfaces/drinks";
 import { IPerson } from "../interfaces/person";
 
@@ -15,9 +15,10 @@ export interface IDrinkMenuProps {
   open: boolean;
   onClose: () => void;
   person: IPerson;
+  menuType: string;
 }
 
-export const DrinksMenu = ({ open, onClose, person }: IDrinkMenuProps) => {
+export const DrinksMenu = ({ open, onClose, person, menuType }: IDrinkMenuProps) => {
   const generateTitle = (person: IPerson) => {
     if (person.lang === "ENG") {
       return "Cocktail Menu";
@@ -39,20 +40,24 @@ export const DrinksMenu = ({ open, onClose, person }: IDrinkMenuProps) => {
   };
 
   const chooseMenu = (person: IPerson) => {
+    let menu;
     if (person.lang === "ENG") {
-      return generateMenu(engCocktails);
+      menu = menuType === "cocktails" ? engCocktails : engShots;
+      return generateMenu(menu);
     } else if (person.lang === "CZ") {
-      return generateMenu(czeCocktails);
+      menu = menuType === "cocktails" ? czeCocktails : czeShots;
+      return generateMenu(menu);
     } else {
-      return generateMenu(polCocktails);
+      menu = menuType === "cocktails" ? polCocktails : polShots;
+      return generateMenu(menu);
     }
   };
 
-  const generateMenu = (cocktails: IDrink[]) => {
-    return cocktails.map((cocktail) => (
+  const generateMenu = (drinks: IDrink[]) => {
+    return drinks.map((drink) => (
       <div style={{ padding: "10px", minWidth: "100%"}}>
-        <Typography variant="h6">{cocktail.name}</Typography>
-        <Typography variant="caption" style={{ paddingLeft: "10px", fontWeight: 400 }}>{cocktail.details}</Typography>
+        <Typography variant="h6">{drink.name}</Typography>
+        <Typography variant="caption" style={{ paddingLeft: "10px", fontWeight: 400 }}>{drink.details}</Typography>
       </div>
     ));
   };

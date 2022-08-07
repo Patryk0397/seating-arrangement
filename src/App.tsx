@@ -15,17 +15,18 @@ function App() {
     name: "",
     seat: "",
     plusOne: null,
-    lang: "PL"
+    lang: "PL",
   });
 
   const [mode, setMode] = React.useState("seating");
-  const [ menuOpen, setMenuOpen ] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const [menu, setMenu] = React.useState("");
 
   const generateBackMessage = (person: IPerson) => {
     if (person.lang === "ENG") {
-      return "Go Back";
+      return "Back";
     } else if (person.lang === "CZ") {
-      return "Jít zpět";
+      return "Zpět";
     } else {
       return "Wróć";
     }
@@ -36,9 +37,9 @@ function App() {
       if (person.lang === "ENG") {
         return "Timeline";
       } else if (person.lang === "CZ") {
-        return "Časová osa";
+        return "plán";
       } else {
-        return "Oś czasu";
+        return "Harmonogram";
       }
     } else {
       if (person.lang === "ENG") {
@@ -51,13 +52,23 @@ function App() {
     }
   };
 
-  const generateMenuMessage = (person: IPerson) => {
+  const generateCocktailMessage = (person: IPerson) => {
     if (person.lang === "ENG") {
-      return "Cocktail Menu";
+      return "Cocktails";
     } else if (person.lang === "CZ") {
-      return "Koktejl Menu";
+      return "Koktejly";
     } else {
-      return "Menu koktajli";
+      return "Koktajle";
+    }
+  };
+
+  const generateShotMessage = (person: IPerson) => {
+    if (person.lang === "ENG") {
+      return "Shots";
+    } else if (person.lang === "CZ") {
+      return "Nápoje";
+    } else {
+      return "Shoty";
     }
   };
 
@@ -93,9 +104,15 @@ function App() {
                 color: "black",
                 marginLeft: "10px",
                 marginBottom: "5px",
+                fontSize: "10px",
               }}
               onClick={() => {
-                setSelectedPerson({ name: "", seat: "", plusOne: null, lang: "PL" })
+                setSelectedPerson({
+                  name: "",
+                  seat: "",
+                  plusOne: null,
+                  lang: "PL",
+                });
                 setMode("seating");
               }}
             >
@@ -108,6 +125,7 @@ function App() {
                 color: "black",
                 marginLeft: "10px",
                 marginBottom: "5px",
+                fontSize: "10px",
               }}
               onClick={() =>
                 setMode(mode === "seating" ? "timeline" : "seating")
@@ -122,12 +140,30 @@ function App() {
                 color: "black",
                 marginLeft: "10px",
                 marginBottom: "5px",
+                fontSize: "10px",
               }}
-              onClick={() =>
-                setMenuOpen(true)
-              }
+              onClick={() => {
+                setMenuOpen(true);
+                setMenu("cocktails");
+              }}
             >
-              {generateMenuMessage(selectedPerson)}
+              {generateCocktailMessage(selectedPerson)}
+            </Button>
+            <Button
+              variant="contained"
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                marginLeft: "10px",
+                marginBottom: "5px",
+                fontSize: "10px",
+              }}
+              onClick={() => {
+                setMenuOpen(true);
+                setMenu("shots");
+              }}
+            >
+              {generateShotMessage(selectedPerson)}
             </Button>
           </div>
         )}
@@ -137,11 +173,15 @@ function App() {
         <SeatingDiagram selectedPerson={selectedPerson} />
       )}
       {selectedPerson.name && mode === "timeline" && (
-      <TimelineComponent selectedPerson={selectedPerson}></TimelineComponent>
+        <TimelineComponent selectedPerson={selectedPerson}></TimelineComponent>
       )}
       <DrinksMenu
         open={menuOpen}
-        onClose={() => setMenuOpen(false)}
+        menuType={menu}
+        onClose={() => {
+          setMenuOpen(false);
+          setMenu("");
+        }}
         person={selectedPerson}
       ></DrinksMenu>
     </div>
