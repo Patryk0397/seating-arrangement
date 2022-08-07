@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button } from "@mui/material";
+import { Button, Box } from "@mui/material";
 import { friends, family, main } from "./constants/seating";
 import BasicSelect from "./components/Select";
 import { IPerson } from "./interfaces/person";
@@ -76,6 +76,7 @@ function App() {
     <div
       style={{
         width: "100%",
+        paddingTop: "45%",
       }}
     >
       <Header selectedPerson={selectedPerson}></Header>
@@ -168,6 +169,18 @@ function App() {
           </div>
         )}
       </div>
+      {!selectedPerson.name && (
+        <div style={{ display: "flex", justifyContent: "center", paddingTop: "20px" }}>
+          <img
+            style={{
+              width: "90%",
+              borderRadius: "5px",
+            }}
+            src={require(`./image.png`)}
+            alt={"Image"}
+          />
+        </div>
+      )}
 
       {selectedPerson.name && mode === "seating" && (
         <SeatingDiagram selectedPerson={selectedPerson} />
