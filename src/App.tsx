@@ -177,7 +177,7 @@ function App() {
               borderRadius: "5px",
             }}
             src={require(`./image.png`)}
-            alt={"Image"}
+            alt={""}
           />
         </div>
       )}
