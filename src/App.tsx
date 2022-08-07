@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Box } from "@mui/material";
+import { Button } from "@mui/material";
 import { friends, family, main } from "./constants/seating";
 import BasicSelect from "./components/Select";
 import { IPerson } from "./interfaces/person";
