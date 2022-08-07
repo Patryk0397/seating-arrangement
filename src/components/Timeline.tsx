@@ -82,7 +82,7 @@ export const TimelineComponent = ({ selectedPerson }: any) => {
     {
       time: "01:00",
       title: {
-        PL: "Hot Meal",
+        PL: "Goracy Posilek",
         CZ: "Horké jídlo",
         ENG: "Hot meal",
       },
@@ -116,7 +116,7 @@ export const TimelineComponent = ({ selectedPerson }: any) => {
           <TimelineContent>
             <Typography variant="caption" sx={{ padding: "4px" }}>
               {selectedPerson.lang === "ENG"
-                ? item.title.PL
+                ? item.title.ENG
                 : selectedPerson.lang === "CZ"
                 ? item.title.CZ
                 : item.title.PL}
