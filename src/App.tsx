@@ -1,17 +1,13 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import { Box, Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import { friends, family, main } from "./constants/seating";
 import BasicSelect from "./components/Select";
 import { IPerson } from "./interfaces/person";
-import { tables } from "./constants/tables";
 import SeatingDiagram from "./components/SeatingDiagram";
 import { Header } from "./components/Header";
+import { TimelineComponent } from "./components/Timeline";
 
 function App() {
-
   const names = [...friends, ...family, ...main];
 
   const [selectedPerson, setSelectedPerson] = React.useState({
@@ -19,6 +15,8 @@ function App() {
     seat: "",
     plusOne: null,
   });
+
+  const [mode, setMode] = React.useState("seating");
 
   const generateBackMessage = (person: IPerson) => {
     if (person.lang === "ENG") {
@@ -30,15 +28,33 @@ function App() {
     }
   };
 
+  const generateModeMessage = (person: IPerson) => {
+    if (mode === "seating") {
+      if (person.lang === "ENG") {
+        return "Timeline";
+      } else if (person.lang === "CZ") {
+        return "Časová osa";
+      } else {
+        return "Oś czasu";
+      }
+    } else {
+      if (person.lang === "ENG") {
+        return "Seating";
+      } else if (person.lang === "CZ") {
+        return "uspořádání";
+      } else {
+        return "Rozsiedzenie";
+      }
+    }
+  };
+
   return (
     <div
       style={{
         width: "100%",
       }}
     >
-      <Header
-        selectedPerson={selectedPerson}
-        ></Header>
+      <Header selectedPerson={selectedPerson}></Header>
       <div
         style={{
           width: "100%",
@@ -56,30 +72,45 @@ function App() {
             onChange={setSelectedPerson}
           />
         ) : (
-          <Button
-            variant="contained"
-            style={{
-              backgroundColor: "white",
-              color: "black",
-              marginLeft: "10px",
-              marginBottom: "5px",
-              width: "95%",
-            }}
-            onClick={() =>
-              setSelectedPerson({ name: "", seat: "", plusOne: null })
-            }
-          >
-            {generateBackMessage(selectedPerson)}
-          </Button>
+          <div style={{ display: "flex", flex: "1 1 0px" }}>
+            <Button
+              variant="contained"
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                marginLeft: "10px",
+                marginBottom: "5px",
+              }}
+              onClick={() =>
+                setSelectedPerson({ name: "", seat: "", plusOne: null })
+              }
+            >
+              {generateBackMessage(selectedPerson)}
+            </Button>
+            <Button
+              variant="contained"
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                marginLeft: "10px",
+                marginBottom: "5px",
+              }}
+              onClick={() =>
+                setMode(mode === "seating" ? "timeline" : "seating")
+              }
+            >
+              {generateModeMessage(selectedPerson)}
+            </Button>
+          </div>
         )}
       </div>
 
-      {selectedPerson.name && (
-        <SeatingDiagram
-          selectedPerson={selectedPerson}
-        />
+      {selectedPerson.name && mode === "seating" && (
+        <SeatingDiagram selectedPerson={selectedPerson} />
       )}
-
+      {selectedPerson.name && mode === "timeline" && (
+      <TimelineComponent selectedPerson={selectedPerson}></TimelineComponent>
+      )}
     </div>
   );
 }
