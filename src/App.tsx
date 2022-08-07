@@ -47,7 +47,7 @@ function App() {
       } else if (person.lang === "CZ") {
         return "uspořádání";
       } else {
-        return "Rozsiedzenie";
+        return "Rozsadzenie";
       }
     }
   };
