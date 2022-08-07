@@ -19,15 +19,6 @@ export interface IDrinkMenuProps {
 }
 
 export const DrinksMenu = ({ open, onClose, person, menuType }: IDrinkMenuProps) => {
-  const generateTitle = (person: IPerson) => {
-    if (person.lang === "ENG") {
-      return "Cocktail Menu";
-    } else if (person.lang === "CZ") {
-      return "Koktejl Menu";
-    } else {
-      return "Menu koktajli";
-    }
-  };
 
   const generateCloseButtonText = (person: IPerson) => {
     if (person.lang === "ENG") {
@@ -70,7 +61,7 @@ export const DrinksMenu = ({ open, onClose, person, menuType }: IDrinkMenuProps)
       aria-describedby="alert-dialog-description"
       sx={{ minWidth: "50vh" }}
     >
-      <DialogTitle id="alert-dialog-title">{generateTitle(person)}</DialogTitle>
+      <DialogTitle id="alert-dialog-title">Menu</DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
           <div>{chooseMenu(person)}</div>
