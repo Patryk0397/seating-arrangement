@@ -17,12 +17,12 @@ export const friends: IPerson[] = [
     plusOne: "A-24",
   },
   {
-    name: 'Jakub przybysz',
+    name: 'Jakub Przybysz',
     seat: "A-21",
     plusOne: null,
   },
   {
-    name: 'Jasiu+1',
+    name: 'Wiktoria Zdunczyk',
     seat: "A-20",
     plusOne: "A-18",
   },
