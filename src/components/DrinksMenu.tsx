@@ -50,7 +50,7 @@ export const DrinksMenu = ({ open, onClose, person }: IDrinkMenuProps) => {
 
   const generateMenu = (cocktails: IDrink[]) => {
     return cocktails.map((cocktail) => (
-      <div style={{ padding: "10px", minWidth: "50vh"}}>
+      <div style={{ padding: "10px", minWidth: "100%"}}>
         <Typography variant="h6">{cocktail.name}</Typography>
         <Typography variant="caption" style={{ paddingLeft: "10px", fontWeight: 400 }}>{cocktail.details}</Typography>
       </div>
@@ -63,6 +63,7 @@ export const DrinksMenu = ({ open, onClose, person }: IDrinkMenuProps) => {
       onClose={onClose}
       aria-labelledby="alert-dialog-title"
       aria-describedby="alert-dialog-description"
+      sx={{ minWidth: "50vh" }}
     >
       <DialogTitle id="alert-dialog-title">{generateTitle(person)}</DialogTitle>
       <DialogContent>
