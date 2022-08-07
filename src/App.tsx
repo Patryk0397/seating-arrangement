@@ -76,7 +76,7 @@ function App() {
     <div
       style={{
         width: "100%",
-        paddingTop: "40%",
+        paddingTop: !selectedPerson ? "40%" : 0,
       }}
     >
       <Header selectedPerson={selectedPerson}></Header>
