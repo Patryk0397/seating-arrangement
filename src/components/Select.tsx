@@ -10,7 +10,7 @@ export default function BasicSelect({ items, value, onChange }: any) {
     onChange(event.target.value);
   };
 
-  const names = items.map((item: any) => item.name).sort();
+  const names = items.filter((item: any) => item.name).map((item: any) => item.name).sort();
 
   return (
     <Box sx={{ minWidth: "80%" }}>

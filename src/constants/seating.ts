@@ -2,6 +2,11 @@ import { IPerson } from "../interfaces/person";
 
 export const friends: IPerson[] = [
   {
+    name: '',
+    seat: "A-32",
+    plusOne: null,
+  },
+  {
     name: 'Aleksy Poklękowski',
     seat: "A-31",
     plusOne: "A-29",
