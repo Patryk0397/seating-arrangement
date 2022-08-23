@@ -41,14 +41,14 @@ export default function SeatingDiagram({ selectedPerson }: any) {
       return {
         backgroundColor: "#025e07",
         color: "#fff",
-        fontSize: "small",
+        fontSize: "12px",
       };
     }
     if (item.seat === selectedPerson.plusOne) {
       return {
         backgroundColor: "#05800b",
         color: "#fff",
-        fontSize: "small",
+        fontSize: "12px",
       };
     }
 
