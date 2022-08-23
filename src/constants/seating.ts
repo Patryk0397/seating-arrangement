@@ -2,108 +2,146 @@ import { IPerson } from "../interfaces/person";
 
 export const friends: IPerson[] = [
   {
-    name: 'Dawid Skelnik',
-    seat: "A-24",
-    plusOne: "A-22",
-  },
-  {
-    name: 'Jan Golec',
-    seat: "A-23",
-    plusOne: null,
-  },
-  {
-    name: 'Klaudia Smolak',
-    seat: "A-22",
-    plusOne: "A-24",
-  },
-  {
-    name: 'Jakub Przybysz',
-    seat: "A-21",
-    plusOne: null,
-  },
-  {
-    name: 'Wiktoria Zdunczyk',
-    seat: "A-20",
-    plusOne: "A-18",
-  },
-  {
-    name: 'Ania Pawlicha',
-    seat: "A-19",
-    plusOne: "A-17",
-  },
-  {
-    name: 'Jasiu Brzoskowski',
-    seat: "A-18",
-    plusOne: "A-20",
-  },
-  {
-    name: 'Michal Galazka',
-    seat: "A-17",
-    plusOne: "A-19",
-  },
-  {
-    name: 'Aleksy Poklekowski',
-    seat: "A-16",
-    plusOne: "A-14",
-  },
-  {
-    name: 'Sasza Awchimkow',
-    seat: "A-15",
-    plusOne: null,
-  },
-  {
-    name: 'Marta Kamyszek',
-    seat: "A-14",
-    plusOne: "A-16,"
-  },
-  {
-    name: 'Agnieszka Polecka',
-    seat: "A-13",
-    plusOne: "A-11",
+    name: 'Aleksy Poklękowski',
+    seat: "A-31",
+    plusOne: "A-29",
   },
   {
     name: 'Alicja Szkolnik',
+    seat: "A-30",
+    plusOne: "A-28",
+  },
+  {
+    name: 'Marta Kamyszek',
+    seat: "A-29",
+    plusOne: "A-31",
+  },
+  {
+    name: 'Tomasz Prabucki',
+    seat: "A-28",
+    plusOne: "A-30",
+  },
+  {
+    name: 'Ellie Boot',
+    seat: "A-27",
+    plusOne: "A-25",
+    lang: "ENG"
+  },
+  {
+    name: 'Markéta Pažoutová',
+    seat: "A-26",
+    plusOne: "A-24",
+    lang: "CZ"
+  },
+  {
+    name: 'Myles Rankin',
+    seat: "A-25",
+    plusOne: "A-27",
+    lang: "ENG"
+  },
+  {
+    name: 'Richard Biroš',
+    seat: "A-24",
+    plusOne: "A-26",
+    lang: "CZ"
+  },
+  {
+    name: 'Chloe Hallatt',
+    seat: "A-23",
+    plusOne: "A-21",
+    lang: "ENG"
+  },
+  {
+    name: 'Dawid Łomiński',
+    seat: "A-22",
+    plusOne: "A-20",
+  },
+  {
+    name: 'Adam Bowman',
+    seat: "A-21",
+    plusOne: "A-23",
+    lang: "ENG"
+  },
+  {
+    name: 'Dorota Pawłowska',
+    seat: "A-20",
+    plusOne: "A-22",
+  },
+  {
+    name: 'Jakub Orsztynowicz',
+    seat: "A-19",
+    plusOne: null,
+  },
+  {
+    name: 'Oliwia Cieślińska',
+    seat: "A-18",
+    plusOne: "A-16",
+  },
+  {
+    name: 'Amelia Mycio',
+    seat: "A-17",
+    plusOne: null,
+  },
+  {
+    name: 'Jakub Andrzejczuk',
+    seat: "A-16",
+    plusOne: "A-18",
+  },
+  {
+    name: 'Małgorzata Pielich-Mycio',
+    seat: "A-15",
+    plusOne: "A-13",
+  },
+  {
+    name: 'Filip Cieśliński',
+    seat: "A-14",
+    plusOne: null,
+  },
+  {
+    name: 'Ireneusz Mycio',
+    seat: "A-13",
+    plusOne: "A-15",
+  },
+  {
+    name: 'Damian Lech',
     seat: "A-12",
     plusOne: "A-10",
   },
   {
-    name: 'Andrzej Awchimkow',
+    name: 'Mariusz Orsztynowicz',
     seat: "A-11",
-    plusOne: "A-13",
+    plusOne: null,
   },
   {
-    name: 'Tomasz Prabucki',
+    name: 'Klaudia Lech',
     seat: "A-10",
     plusOne: "A-12",
   },
   {
-    name: 'Jakub Orsztynowicz',
+    name: 'Zbigniew Orsztynowicz',
     seat: "A-9",
     plusOne: null,
   },
   {
-    name: 'Marketa Pazoutova',
+    name: 'Aleksandra Cieślińska',
     seat: "A-8",
     plusOne: "A-6",
     lang: "CZ"
   },
   {
-    name: 'Myles Rankin',
+    name: 'Józef Orsztynowicz',
     seat: "A-7",
     plusOne: "A-5",
-    lang: "ENG"
   },
   {
-    name: 'Richard Biros',
+    name: 'Tomasz Cieśliński',
     seat: "A-6",
     plusOne: "A-8",
-    lang: "CZ"
   },
   {
-    name: 'Ellie Boot',
+    name: 'Agnieszka Orsztynowicz',
     seat: "A-5",
     plusOne: "A-7",
-    lang: "ENG"
   },
   {
     name: 'Dawid Lominski',
@@ -111,224 +149,192 @@ export const friends: IPerson[] = [
     plusOne: "A-2",
   },
   {
-    name: 'Chloe Hallat',
+    name: 'Stanisław Cieśliński',
     seat: "A-3",
     plusOne: "A-1",
-    lang: "ENG"
   },
   {
-    name: 'Dorota Pawlowska',
+    name: 'Krzysztof Stańczak',
     seat: "A-2",
     plusOne: "A-4",
   },
   {
-    name: 'Adam Bowman',
+    name: 'Teresa Cieślińska',
     seat: "A-1",
     plusOne: "A-3",
-    lang: "ENG"
   },
 ];
 
 export const family: IPerson[] = [
   {
-    name: 'Maja Ozga',
-    seat: "B-40",
-    plusOne: null,
-  },
-  {
-    name: 'Marysia Ozga',
-    seat: "B-39",
-    plusOne: null,
-  },
-  {
-    name: 'Olus Ozga',
-    seat: "B-38",
-    plusOne: null,
-  },
-  {
-    name: 'Milena Ozga',
-    seat: "B-37",
-    plusOne: null,
-  },
-  {
-    name: 'Wojtus Ozga',
-    seat: "B-36",
-    plusOne: null,
-  },
-  {
-    name: 'Amelka Mycio',
-    seat: "B-35",
-    plusOne: null,
-  },
-  {
-    name: 'Dawid Ozga',
+    name: 'Dominika Kras',
     seat: "B-34",
-    plusOne: null,
+    plusOne: "B-32",
   },
   {
-    name: 'Filip Cieslinski',
+    name: 'Wiktoria Zduńczyk',
     seat: "B-33",
-    plusOne: null,
+    plusOne: "B-33",
   },
   {
-    name: 'Maciek Potopowicz',
+    name: 'Michał Kras',
     seat: "B-32",
-    plusOne: null,
+    plusOne: "B-34",
   },
   {
-    name: 'Oliwia Cieslinska',
+    name: 'Jan Brzoskowski',
     seat: "B-31",
-    plusOne: "B-29",
+    plusOne: "B-33",
   },
   {
-    name: 'Blazej Potopowicz',
+    name: 'Dawid Skelnik',
     seat: "B-30",
-    plusOne: null,
-  },
-  {
-    name: 'Jakub Andrzejczuk',
-    seat: "B-29",
-    plusOne: "B-31",
-  },
-  {
-    name: 'Grzegorz Potopowicz',
-    seat: "B-28",
-    plusOne: "B-26",
-  },
-  {
-    name: 'Damian Lech',
-    seat: "B-27",
-    plusOne: "B-25",
-  },
-  {
-    name: 'Eliza Potopowicz',
-    seat: "B-26",
     plusOne: "B-28",
   },
   {
-    name: 'Klaudia Lech',
-    seat: "B-25",
-    plusOne: "B-27",
+    name: 'Jan Golec',
+    seat: "B-29",
+    plusOne: null,
   },
   {
-    name: 'Kamila Ozga',
+    name: 'Klaudia Smolak',
+    seat: "B-28",
+    plusOne: "B-30",
+  },
+  {
+    name: 'Jakub Przybysz',
+    seat: "B-27",
+    plusOne: null,
+  },
+  {
+    name: 'Sasza Awchimkow',
+    seat: "B-26",
+    plusOne: null,
+  },
+  {
+    name: 'Andrzej Awchimkow',
+    seat: "B-25",
+    plusOne: "B-23",
+  },
+  {
+    name: 'Anna Pawlicha',
     seat: "B-24",
     plusOne: "B-22",
   },
   {
-    name: 'Ola Cieslinska',
+    name: 'Agnieszka Polecka',
     seat: "B-23",
-    plusOne: "B-21",
+    plusOne: "B-25",
   },
   {
-    name: 'Emil Ozga',
+    name: 'Michał Gałązka',
     seat: "B-22",
     plusOne: "B-24",
   },
   {
-    name: 'Tomasz Cieslinski',
+    name: 'Kamila Ozga',
     seat: "B-21",
-    plusOne: "B-23",
+    plusOne: "B-19",
   },
   {
-    name: 'Lukasz Ozga',
+    name: 'Łukasz Ozga',
     seat: "B-20",
-    plusOne: "B-18",
+    plusOne: "B-16",
   },
   {
-    name: 'Mariusz Orsztynowicz',
+    name: 'Emil Ozga',
     seat: "B-19",
-    plusOne: null,
-  },
-  {
-    name: 'Alicja Ozga',
-    seat: "B-18",
-    plusOne: "B-20",
-  },
-  {
-    name: 'Ireneusz Mycio',
-    seat: "B-17",
-    plusOne: "B-15",
+    plusOne: "B-21",
   },
   {
     name: 'Maja Ozga',
+    seat: "B-18",
+    plusOne: null,
+  },
+  {
+    name: 'Aleksander Ozga',
+    seat: "B-17",
+    plusOne: null,
+  },
+  {
+    name: 'Alicja Dymarska-Ozga',
     seat: "B-16",
-    plusOne: null,
+    plusOne: "B-20",
   },
   {
-    name: 'Malgorzata Pielich-Mycio',
+    name: 'Grzegorz Potopowicz',
     seat: "B-15",
-    plusOne: "B-17",
-  },
-  {
-    name: 'Kamila Czuczuk',
-    seat: "B-14",
-    plusOne: null,
-  },
-  {
-    name: 'Katarzyna Stanczak',
-    seat: "B-13",
-    plusOne: "B-11",
-  },
-  {
-    name: 'Janusz Ozga',
-    seat: "B-12",
-    plusOne: "B-10",
-  },
-  {
-    name: 'Krzysztof Stanczak',
-    seat: "B-11",
     plusOne: "B-13",
   },
   {
-    name: 'Ilona Czuczuk',
-    seat: "B-10",
+    name: 'Janusz Ozga',
+    seat: "B-14",
     plusOne: "B-12",
   },
   {
-    name: 'Zbigniew Orsztynowicz',
+    name: 'Eliza Potopowicz',
+    seat: "B-13",
+    plusOne: "B-15",
+  },
+  {
+    name: 'Ilona Czuczuk',
+    seat: "B-12",
+    plusOne: "B-14",
+  },
+  {
+    name: 'Błażej Potopowicz',
+    seat: "B-11",
+    plusOne: null,
+  },
+  {
+    name: 'Beata Ozga-Demczuk',
+    seat: "B-10",
+    plusOne: "B-8",
+  },
+  {
+    name: 'Maciej Potopowicz',
     seat: "B-9",
     plusOne: null,
   },
   {
-    name: 'Beata Ozga',
-    seat: "B-8",
-    plusOne: "B-6",
-  },
-  {
-    name: 'Jozef Orsztynowicz',
-    seat: "B-7",
-    plusOne: "B-7",
-  },
-  {
     name: 'Arkadiusz Ozga',
-    seat: "B-6",
-    plusOne: "B-8",
+    seat: "B-8",
+    plusOne: "B-10",
   },
   {
-    name: 'Agnieszka Orsztynowicz',
-    seat: "B-5",
-    plusOne: "B-7",
+    name: 'Wojciech Ozga',
+    seat: "B-7",
+    plusOne: null,
   },
   {
     name: 'Lech Ozga',
+    seat: "B-6",
+    plusOne: "B-4",
+  },
+  {
+    name: 'Milena Ozga',
+    seat: "B-5",
+    plusOne: null,
+  },
+  {
+    name: 'Bożena Ozga',
     seat: "B-4",
     plusOne: "B-2",
   },
   {
-    name: 'Stanislaw Cieslinski',
+    name: 'Marysia Ozga',
     seat: "B-3",
-    plusOne: "B-1",
+    plusOne: null,
   },
   {
-    name: 'Bozena Ozga',
+    name: 'Kamila Czuczuk',
     seat: "B-2",
-    plusOne: "B-4",
+    plusOne: null,
   },
   {
-    name: 'Teresa Cieslinska',
+    name: 'Dawid Ozga',
     seat: "B-1",
-    plusOne: "B-3",
+    plusOne: null,
   },
 ];
 

@@ -176,7 +176,7 @@ function App() {
               width: "90%",
               borderRadius: "5px",
             }}
-            src={require(`./image.png`)}
+            src={require(`./image.jpg`)}
             alt={""}
           />
         </div>
