@@ -131,7 +131,6 @@ export const friends: IPerson[] = [
     name: 'Aleksandra Cieślińska',
     seat: "A-8",
     plusOne: "A-6",
-    lang: "CZ"
   },
   {
     name: 'Józef Orsztynowicz',
