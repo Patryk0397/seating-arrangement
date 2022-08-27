@@ -7,7 +7,7 @@ export const engCocktails: IDrink[] = [
   },
   {
     name: '#2 Watermelon Mojito',
-    details: "Vodka, int, lime, sugar, soda, watermelon",
+    details: "Vodka, sugar, lime, watermelon, mint, soda",
   },
   {
     name: '#3 Tropical Island',
@@ -42,11 +42,11 @@ export const engCocktails: IDrink[] = [
 export const polCocktails: IDrink[] = [
   {
     name: '#1 Mojito Classic',
-    details: "Rum, mięta, cytryna, cukier, soda",
+    details: "Rum, limonka, mięta, cukier, soda",
   },
   {
     name: '#2 Arbuzowe Mojito',
-    details: "Wódka, mięta, cytryna, cukier, soda, arbuz",
+    details: "Wódka, mięta, limonka, cukier, soda, arbuz",
   },
   {
     name: '#3 Tropikalna Wyspa',
@@ -62,15 +62,15 @@ export const polCocktails: IDrink[] = [
   },
   {
     name: '#6 Lesny Skrzat',
-    details: "Whisky, jagoda, cytryna, sos czarny",
+    details: "Whisky, jezyna, cytryna, świerk",
   },
   {
     name: '#7 Whisky Sour',
-    details: "Whisky, cytryna, angostura bitter, białe jajko",
+    details: "Whisky, cytryna, angostura bitter, białko",
   },
   {
     name: '#8 Caipiroska',
-    details: "Wódka Zubrowka, cytryna, cukier",
+    details: "Wódka Zubrowka, limonka, cukier",
   },
   {
     name: '#9 Blue Lagoon',
@@ -81,15 +81,15 @@ export const polCocktails: IDrink[] = [
 export const czeCocktails: IDrink[] = [
   {
     name: '#1 Mojito Classic',
-    details: "Rum, máta, citron, cukr, soda",
+    details: "Rum, máta, limetka, cukr, soda",
   },
   {
     name: '#2 Watermelon Mojito',
-    details: "Vodka, máta, citron, cukr, soda, meloun",
+    details: "Vodka, máta, limetka, cukr, soda, meloun",
   },
   {
     name: '#3 Tropical Island',
-    details: "Vodka, citron, passion fruit, sprite",
+    details: "Vodka, citron, mučenka, sprite",
   },
   {
     name: '#4 Kiwi Crush',
@@ -109,7 +109,7 @@ export const czeCocktails: IDrink[] = [
   },
   {
     name: '#8 Caipiroska',
-    details: "Vodka Zubrowka, citron, cukr",
+    details: "Vodka Zubrowka, limetka, cukr",
   },
   {
     name: '#9 Blue Lagoon',
@@ -170,6 +170,6 @@ export const polShots: IDrink[] = [
   },
   {
     name: '#4 Pan Młody',
-    details: "Wódka czarna porzeczka, cytryna"
+    details: "Wódka jezyna, cytryna"
   }
 ];

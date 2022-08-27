@@ -2,12 +2,12 @@ import { IPerson } from "../interfaces/person";
 
 export const friends: IPerson[] = [
   {
-    name: '',
+    name: 'Sasza Awchimkow',
     seat: "A-32",
     plusOne: null,
   },
   {
-    name: 'Aleksy Poklękowski',
+    name: 'Andrzej Awchimkow',
     seat: "A-31",
     plusOne: "A-29",
   },
@@ -17,7 +17,7 @@ export const friends: IPerson[] = [
     plusOne: "A-28",
   },
   {
-    name: 'Marta Kamyszek',
+    name: 'Agnieszka Polecka',
     seat: "A-29",
     plusOne: "A-31",
   },
@@ -27,28 +27,24 @@ export const friends: IPerson[] = [
     plusOne: "A-30",
   },
   {
-    name: 'Ellie Boot',
+    name: 'Aleksy Poklękowski',
     seat: "A-27",
     plusOne: "A-25",
-    lang: "ENG"
   },
   {
-    name: 'Markéta Pažoutová',
+    name: 'Dorota Pawłowska',
     seat: "A-26",
     plusOne: "A-24",
-    lang: "CZ"
   },
   {
-    name: 'Myles Rankin',
+    name: 'Marta Kamyszek',
     seat: "A-25",
     plusOne: "A-27",
-    lang: "ENG"
   },
   {
-    name: 'Richard Biroš',
+    name: 'Dawid Łomiński',
     seat: "A-24",
     plusOne: "A-26",
-    lang: "CZ"
   },
   {
     name: 'Chloe Hallatt',
@@ -57,9 +53,10 @@ export const friends: IPerson[] = [
     lang: "ENG"
   },
   {
-    name: 'Dawid Łomiński',
+    name: 'Richard Biroš',
     seat: "A-22",
     plusOne: "A-20",
+    lang: "CZ"
   },
   {
     name: 'Adam Bowman',
@@ -68,9 +65,10 @@ export const friends: IPerson[] = [
     lang: "ENG"
   },
   {
-    name: 'Dorota Pawłowska',
+    name: 'Markéta Pažoutová',
     seat: "A-20",
     plusOne: "A-22",
+    lang: "CZ"
   },
   {
     name: 'Jakub Orsztynowicz',
@@ -148,7 +146,7 @@ export const friends: IPerson[] = [
     plusOne: "A-7",
   },
   {
-    name: 'Dawid Lominski',
+    name: 'Katarzyna Stańczak',
     seat: "A-4",
     plusOne: "A-2",
   },
@@ -171,29 +169,19 @@ export const friends: IPerson[] = [
 
 export const family: IPerson[] = [
   {
-    name: 'Dominika Kras',
-    seat: "B-34",
-    plusOne: "B-32",
-  },
-  {
     name: 'Wiktoria Zduńczyk',
-    seat: "B-33",
-    plusOne: "B-33",
+    seat: "B-32",
+    plusOne: "B-30",
   },
   {
-    name: 'Michał Kras',
-    seat: "B-32",
-    plusOne: "B-34",
+    name: '',
+    seat: "B-31",
+    plusOne: null,
   },
   {
     name: 'Jan Brzoskowski',
-    seat: "B-31",
-    plusOne: "B-33",
-  },
-  {
-    name: 'Dawid Skelnik',
     seat: "B-30",
-    plusOne: "B-28",
+    plusOne: "B-32",
   },
   {
     name: 'Jan Golec',
@@ -201,9 +189,9 @@ export const family: IPerson[] = [
     plusOne: null,
   },
   {
-    name: 'Klaudia Smolak',
+    name: 'Dawid Skelnik',
     seat: "B-28",
-    plusOne: "B-30",
+    plusOne: "B-26",
   },
   {
     name: 'Jakub Przybysz',
@@ -211,27 +199,27 @@ export const family: IPerson[] = [
     plusOne: null,
   },
   {
-    name: 'Sasza Awchimkow',
+    name: 'Klaudia Smolak',
     seat: "B-26",
-    plusOne: null,
+    plusOne: "B-28",
   },
   {
-    name: 'Andrzej Awchimkow',
+    name: 'Michał Kras',
     seat: "B-25",
     plusOne: "B-23",
   },
   {
-    name: 'Anna Pawlicha',
+    name: 'Michał Gałązka',
     seat: "B-24",
     plusOne: "B-22",
   },
   {
-    name: 'Agnieszka Polecka',
+    name: 'Dominika Kras',
     seat: "B-23",
     plusOne: "B-25",
   },
   {
-    name: 'Michał Gałązka',
+    name: 'Anna Pawlicha',
     seat: "B-22",
     plusOne: "B-24",
   },
