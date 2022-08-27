@@ -54,7 +54,7 @@ export default function WelcomeMessageComponent({
               person.seat.split("-")[1]
             }`}
           {!person.lang &&
-            `Siedzisz na stole #${getTableNumber(selectedPerson)} na miejscu #${
+            `Siedzisz przy stole #${getTableNumber(selectedPerson)} na miejscu #${
               person.seat.split("-")[1]
             }`}
         </p>
